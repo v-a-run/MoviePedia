@@ -10,7 +10,7 @@ const autocompleteConfig = {
         return movie.Title;
     },
     async fetchData(searchTerm){
-        const response = await axios.get("http://www.omdbapi.com/",{
+        const response = await axios.get("https://www.omdbapi.com/",{
 
         params : {                  //_ @params - automatically appends keys in url
             apikey : '89078b54',    //- use lowercase letters to append in url
