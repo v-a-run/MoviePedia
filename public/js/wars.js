@@ -31,7 +31,10 @@ createAutocomplete({
     root : document.querySelector("#left-autocomplete"),
     onOptionSelect(movie){
         onMovieSelect(movie, document.querySelector("#left-summary"), 'left');
-        document.querySelector(".tutorial").classList.add("is-hidden");
+        const sections = document.querySelectorAll(".tutorial");
+        for(let section of sections){
+            section.classList.add("is-hidden");
+        }
     }
 });
 
@@ -40,9 +43,19 @@ createAutocomplete({
     root : document.querySelector("#right-autocomplete"),
     onOptionSelect(movie){
         onMovieSelect(movie, document.querySelector("#right-summary"), 'right');
-        document.querySelector(".tutorial").classList.add("is-hidden");
+        const sections = document.querySelectorAll(".tutorial");
+        for(let section of sections){
+            section.classList.add("is-hidden");
+        }
     }
 });
+
+const onDifferent = () => {
+    const reload = document.querySelector("#reload");
+    reload.addEventListener('click', ()=>{
+        window.location.reload();
+    })
+}
 
 let leftMovie;
 let rightMovie;
@@ -75,20 +88,32 @@ const runComparison = () => {
     leftSideStats.forEach((leftSideStat, index)=>{
         const rightSideStat = rightSideStats[index];
 
-        const leftSide = parseInt(leftSideStat.dataset.value);
-        const rightSide = parseInt(rightSideStat.dataset.value);
+        const leftSide = parseFloat(leftSideStat.dataset.value);
+        const rightSide = parseFloat(rightSideStat.dataset.value);
 
-        if(leftSide > rightSide){
-            rightSideStat.classList.remove('is-primary');
-            rightSideStat.classList.add('is-warning');
-        }else if(leftSide < rightSide){
+        if(isNaN(leftSide) || isNaN(rightSide)){
             leftSideStat.classList.remove('is-primary');
-            leftSideStat.classList.add('is-warning');
+            leftSideStat.classList.add('is-light');
+            rightSideStat.classList.remove('is-primary');
+            rightSideStat.classList.add('is-light');
+
         }else{
-            leftSideStat.classList.remove('is-primary');
-            leftSideStat.classList.add('is-warning');
-            rightSideStat.classList.remove('is-primary');
-            rightSideStat.classList.add('is-warning');
+
+            if(rightSide > leftSide){
+                leftSideStat.classList.remove('is-primary');
+                leftSideStat.classList.add('is-warning');
+
+            }else if(rightSide < leftSide){
+                rightSideStat.classList.remove('is-primary');
+                rightSideStat.classList.add('is-warning');
+
+            }else{
+                leftSideStat.classList.remove('is-primary');
+                leftSideStat.classList.add('is-light');
+                rightSideStat.classList.remove('is-primary');
+                rightSideStat.classList.add('is-light');
+
+            }
         }
     })
 }

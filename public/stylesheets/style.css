@@ -46,3 +46,17 @@
     height: 50px;
     margin-right: 10px;
   }
+
+  .below-header{
+    text-align: center;
+    padding: 1.2rem 0;
+  }
+
+  .search-input{
+    margin : auto;
+    max-width: 50%;
+  }
+
+  h3.buttons{
+    justify-content: space-between;
+  }

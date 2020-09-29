@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"
+    />
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+  <body>
+    <section class="hero is-dark is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Movie Wars
+            <span class="icon">
+              <i class="fas fa-film"></i>
+            </span>
+          </h1>
+          <h3 class="subtitle buttons">
+            <a class="button is-dark is-rounded is-outlined is-inverted" href="/">Back to HOME</a>
+            <a class="button is-dark is-rounded is-outlined is-inverted" href="http://github.com/v-a-run/MoviePedia">Source Code</a>
+          </h3>
+        </div>
+      </div>
+    </section>
+
+    <div class="container below-header">
+      <a id="reload" class="button is-dark is-rounded is-outlined" href="/wars">Another Comparison</a>
+    </div>
+
+    <div class="container">
+      
+      <div class="columns">
+        <div class="column">
+          <div id="left-autocomplete"></div>
+          <div id="left-summary"></div>
+        </div>
+
+        <div class="column">
+          <div id="right-autocomplete"></div>
+          <div id="right-summary"></div>
+        </div>
+      </div>
+      
+      <div class="column is-half notification is-warning tutorial">
+        <h1 class="title">Search for a Movie on Both Sides</h1>
+        <p class="subtitle">We'll find out which one is the BEST !
+        </p>
+      </div>
+
+      <div class="column is-half notification is-warning tutorial">
+        <p class="subtitle">After each comparison Refresh the page.
+          <br>OR 
+          <br>Hit "Another Comparison" button.
+        </p>
+      </div>
+
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/autocomplete.js"></script>
+    <script src="js/wars.js"></script>
+  </body>
+</html>

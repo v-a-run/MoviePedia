@@ -10,24 +10,27 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"
     />
-    <link rel="stylesheet" href="stylesheets/MovieWars.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
   </head>
   <body>
-    <section class="hero is-danger is-bold">
+    <section class="hero is-warning is-bold">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
-            Movie Wars
+            MoviePedia
             <span class="icon">
               <i class="fas fa-film"></i>
             </span>
           </h1>
-          <h3 class="subtitle"><a class="button is-danger is-inverted is-rounded is-outlined" href="http://github.com/v-a-run/MovieWars">Source Code</a></h3>
+          <h3 class="subtitle">
+            <a class="button is-warning is-inverted is-rounded is-outlined" href="http://github.com/v-a-run/MoviePedia">Source Code</a>
+          </h3>
         </div>
       </div>
     </section>
 
     <div class="container">
+      
       <div class="columns">
         <div class="column">
           <div id="left-autocomplete"></div>
@@ -40,14 +43,21 @@
         </div>
       </div>
       
-      <div class="column is-half notification is-danger tutorial">
-        <h1 class="title">Search for a Movie on Both Sides</h1>
-        <p class="subtitle">We'll find out which one is the BEST !</p>
+      <div class="column is-half notification is-dark tutorial">
+        <h1 class="title">Movie Search</h1>
+        <p class="subtitle">Search and get detailed info of your favourite movie.
+        </p>
+        <a class="button is-warning" href="/search">Movie Search</a>
       </div>
+    
+      <div class="column is-half notification is-dark tutorial">
+        <h1 class="title">Movie Wars</h1>
+        <p class="subtitle">Pick any 2 movies and we'll find out which one is the BEST !
+        </p>
+        <a class="button is-warning" href="/wars">Movie Wars</a>
+      </div>
+
     </div>
 
-    <script src="js/MovieWarsUtils.js"></script>
-    <script src="js/MovieWarsAutocomplete.js"></script>
-    <script src="js/MovieWars.js"></script>
   </body>
 </html>
